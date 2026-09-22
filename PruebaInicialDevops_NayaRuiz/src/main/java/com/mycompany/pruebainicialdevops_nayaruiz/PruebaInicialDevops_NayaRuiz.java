@@ -28,8 +28,7 @@ public class PruebaInicialDevops_NayaRuiz {
                            2.- Cambiar estado
                            3.- Ver listado de tareas
                            4.- Eliminar tarea
-                           5.- Salir
-                           """);
+                           5.- Salir""");
     }
 
     public static void acciones(int n, GestorTareas g, Scanner teclado) {
@@ -41,12 +40,13 @@ public class PruebaInicialDevops_NayaRuiz {
                 do {
                     System.out.println("Introduzca el estado de la tarea (pendiente o terminada)");
                     estado = teclado.nextLine().toLowerCase().trim();
-                } while (!estado.equals("pendiente") || !estado.equals("terminada"));
+                } while (!estado.equals("pendiente") && !estado.equals("terminada"));
                 if (estado.equals("pendiente")) {
                     g.añadirTarea(tarea, false);
                 } else {
                     g.añadirTarea(tarea, true);
                 }
+                System.out.println("Tarea añadida correctamente");
             }
             case 2 -> {
                 System.out.println("Introduzca el nombre de la tarea");

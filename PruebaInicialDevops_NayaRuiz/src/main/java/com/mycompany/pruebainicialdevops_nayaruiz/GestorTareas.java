@@ -16,7 +16,7 @@ public class GestorTareas {
 
     List<Tarea> listaTareas;
 
-    public void GestorTareas() {
+    public GestorTareas() {
         listaTareas = new ArrayList<>();
     }
 
@@ -53,7 +53,7 @@ public class GestorTareas {
                         eliminado = true;
                         listaTareas.remove(t);
                     }
-                } while (!confirmacion.equals("s") || !confirmacion.equals("n"));
+                } while (!confirmacion.equals("s") && !confirmacion.equals("n"));
             }
         }
         return eliminado;
