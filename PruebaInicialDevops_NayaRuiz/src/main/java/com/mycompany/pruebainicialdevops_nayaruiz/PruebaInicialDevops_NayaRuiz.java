@@ -18,6 +18,7 @@ public class PruebaInicialDevops_NayaRuiz {
         do {
             menu();
             menu = Integer.parseInt(teclado.nextLine());
+            acciones(menu,t,teclado);
         } while (menu != 4);
     }
 
@@ -48,6 +49,12 @@ public class PruebaInicialDevops_NayaRuiz {
             }
             case 2 ->
                 g.listado();
+            case 3 ->{
+                System.out.println("Introduzca el nombre de la tarea que desea eliminar");
+                String nombre = teclado.nextLine();
+                boolean eliminado = g.eliminar(nombre, teclado);
+                System.out.println(eliminado ? "Se ha eliminado correctamente" : "No se ha eliminado la tarea");
+            }
         }
     }
 
