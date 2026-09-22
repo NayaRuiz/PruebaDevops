@@ -23,6 +23,17 @@ public class GestorTareas {
     public void añadirTarea(String nombre, boolean completada) {
         listaTareas.add(new Tarea(nombre, completada));
     }
+    
+    public boolean cambiarEstado(String nombre){
+        boolean cambiado = false;
+        for (Tarea t : listaTareas) {
+            if (t.getNombre().toLowerCase().trim().equals(nombre.toLowerCase().trim())) {
+                t.setCompletada(!t.isCompletada());
+                cambiado = true;
+            }
+        }
+        return cambiado;
+    }
 
     public void listado() {
         for (Tarea t : listaTareas) {

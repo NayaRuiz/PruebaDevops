@@ -18,16 +18,17 @@ public class PruebaInicialDevops_NayaRuiz {
         do {
             menu();
             menu = Integer.parseInt(teclado.nextLine());
-            acciones(menu,t,teclado);
-        } while (menu != 4);
+            acciones(menu, t, teclado);
+        } while (menu != 5);
     }
 
     public static void menu() {
         System.out.println("""
                            1.- Introducir tarea
-                           2.- Ver listado de tareas
-                           3.- Eliminar tarea
-                           4.- Salir
+                           2.- Cambiar estado
+                           3.- Ver listado de tareas
+                           4.- Eliminar tarea
+                           5.- Salir
                            """);
     }
 
@@ -47,14 +48,22 @@ public class PruebaInicialDevops_NayaRuiz {
                     g.añadirTarea(tarea, true);
                 }
             }
-            case 2 ->
+            case 2 -> {
+                System.out.println("Introduzca el nombre de la tarea");
+                String tarea = teclado.nextLine();
+                System.out.println(g.cambiarEstado(tarea) ? "Estado cambiado correctamente" : "No se ha encontrado la tarea");
+                
+            }
+            case 3 ->
                 g.listado();
-            case 3 ->{
+            case 4 -> {
                 System.out.println("Introduzca el nombre de la tarea que desea eliminar");
                 String nombre = teclado.nextLine();
                 boolean eliminado = g.eliminar(nombre, teclado);
                 System.out.println(eliminado ? "Se ha eliminado correctamente" : "No se ha eliminado la tarea");
             }
+            default ->
+                System.out.println("Introduzca un numero correcto");
         }
     }
 
