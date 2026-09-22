@@ -29,6 +29,15 @@ public class GestorTareas {
         }
     }
     
-    public
+    public boolean eliminar (String nombre){
+        boolean eliminado = false;
+        for (Tarea t : listaTareas){
+            if(t.getNombre().toLowerCase().trim().equals(nombre.toLowerCase().trim())){
+                eliminado = true;
+                listaTareas.remove(t);
+            }
+        }
+        return eliminado;
+    }
     
 }

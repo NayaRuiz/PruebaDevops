@@ -26,4 +26,20 @@ public class Tarea {
         System.out.println(nombre + (completada ? " : completada" : " : no completada"));
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public boolean isCompletada() {
+        return completada;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setCompletada(boolean completada) {
+        this.completada = completada;
+    }
+
 }
